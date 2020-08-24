@@ -1,6 +1,6 @@
 var canvas = document.getElementById('canvas');
 var tabla = canvas.getContext('2d');
-
+//luna je bila u tom javascriptu
 // Reket sablon
 function reket(x, y, width, height) {
     this.x = x;
