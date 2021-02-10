@@ -1,7 +1,6 @@
 var canvas = document.getElementById('canvas');
 var tabla = canvas.getContext('2d');
-//luna je bila u tom javascriptu
-// Reket sablon
+
 function reket(x, y, width, height) {
     this.x = x;
     this.y = y;
@@ -40,11 +39,11 @@ function reket(x, y, width, height) {
     };
 }
 
-// Novi objekti
-var igrac = new reket(5, 200, 25, 100);
-var komp = new reket(610, 200, 25, 100);
-var mreza = { x: canvas.width/2, y: 0, width: 5, height: 10};
-var lopta = { x: 320, y: 240, radius: 10, xBrzina: 2, yBrzina: 0,
+    // Novi objekti
+    var igrac = new reket(5, 200, 25, 100);
+    var komp = new reket(610, 200, 25, 100);
+    var mreza = { x: canvas.width/2, y: 0, width: 5, height: 10};
+    var lopta = { x: 320, y: 240, radius: 10, xBrzina: 2, yBrzina: 0,
     // Dodajemo naknadno za odbacivanje lopte
             povratakX: function() {
                 this.xBrzina *= -1;
@@ -79,6 +78,7 @@ function tik() {
     nacrtajIgru();
     window.setTimeout("tik()", 1000/60);
 }
+
 function tokIgre() {
     document.getElementById("skorKomp").innerText = komp.score;
     document.getElementById("skorIgrac").innerText = igrac.score;
@@ -115,6 +115,7 @@ function tokIgre() {
         komp.pokretReket(38);
     }
 }
+
 function nacrtajIgru() {
     tabla.fillStyle = "green";
     tabla.fillRect(0, 0, 640, 480);
@@ -123,18 +124,21 @@ function nacrtajIgru() {
     nacrtajReket(komp);
     nacrtajLoptu(lopta);
 }
+
 function nacrtajReket(reket) {
     tabla.fillStyle = "yellow";
     //tabla.shadowBlur = 20;
     //tabla.shadowColor = "white";
     tabla.fillRect(reket.x, reket.y, reket.width, reket.height);
 }
+
 function nacrtajLoptu(lopta) {
     tabla.beginPath();
     tabla.arc(lopta.x, lopta.y, lopta.radius, 0, 2 * Math.PI, false);
     tabla.fillStyle = "orange";
     tabla.fill();
 }
+
 function nacrtajLiniju() {
     for (var i = 0; i <= canvas.height; i += 15) {
         tabla.fillStyle = "white";

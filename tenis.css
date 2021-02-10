@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+canvas {
+    border: 2px solid black;
+}
+
+.poeni {
+    color: darkgreen;
+}
+
+.prikaz {
+    display: inline-block;
+    margin: 30px;
+}

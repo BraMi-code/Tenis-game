@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenis</title>
-    <link href="tenis.css">
+    <link href="tenis.css" rel="stylesheet">
 </head>
 <body>
-    <div id="poeni">
-        Igrac:
-        <p id="skorIgrac"></p>
-        Komp:
-        <p id="skorKomp"></p>
+    <div id="poeni" class="poeni">
+        <span class="prikaz">
+            Igrac
+            <p id="skorIgrac"></p>
+        </span>
+       <span class="prikaz">
+            Kompjuter
+            <p id="skorKomp"></p>
+       </span>
     </div>
-<canvas id="canvas" width="640" height="480"></canvas>
-    
+
+<canvas id="canvas" width="640px" height="480px"></canvas>
 <script src="tenis.js"></script>
 </body>
 </html>
